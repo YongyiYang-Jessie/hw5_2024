@@ -1,0 +1,171 @@
+/* Edit the body element to use the Poppins font (using Google fonts) with serif as a backup.  
+It should also use the image “concrete_seamless.png” 
+as a background-image with a backup color of #f1f1f1. */
+
+/*step 1*/
+@keyframes mymove {
+    0% {
+        width: 25px;
+        opacity: 0;
+    }
+    /*from 25px to 475px; start with an opacity of 0 and end with an opacity of 1*/
+    100% {
+        width: 475px;
+        opacity: 1;
+    }
+}
+
+#logo {
+    animation: mymove 5s forwards; /* Animation lasts 5 seconds and maintains the final state */
+}
+
+/*step 2*/
+body {
+    font-family: "Poppins", sans-serif;
+    background-image: url("/images/concrete_seamless.png");
+    background-color: #f1f1f1;
+  }
+
+/*step 3*/
+/*Edit the css for the header tag (all instances) to use flex to match our example. */
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*step 4*/
+/*Edit the css for the nav_links class to use flex to match our example. Do not modify the 
+list items or the links - modify the nav_links class to use flex. */
+.nav_links{
+    display: flex;
+    flex-direction: column;
+}
+
+/*step6*/
+.card > header {
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    background-color: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0;
+    flex-direction: column;
+}
+
+/*step 7*/
+.card {
+    max-width: 450px; 
+    flex: 1 1 450px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+/*step 8*/
+.pricing {
+    display: flex;
+    flex-direction: column; /* Sets the cards in pricing class to be layout vertically*/
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-basis: 450px;
+}
+
+/*step 9*/
+.about .gallery img{
+    border: 10px solid #50C7C7;
+    margin: 10px; /*Margin on four sides*/
+    width: 300px;
+}
+
+/*step 10*/
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center all images */
+}
+
+
+@media screen and (min-width: 900px) {
+/*step 11*/
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: right;
+    justify-content: space-between;
+}
+
+.nav_links{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+}
+
+/*step 12*/
+.card {
+    max-width: 275px; 
+    flex: 1 1 275px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.pricing {
+    display: flex;
+    flex-direction: row; /* Sets the cards in pricing class to be layout horizontally*/
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-basis: 275px;
+}
+
+/*step 13*/
+
+
+}
+
+/*step 14*/
+@media (prefers-reduced-motion: reduce) {
+    /* Disable animation for the logo */
+    #logo {
+        animation: none;
+    }
+}
+
+/*step 15*/
+@media print and (orientation: portrait) {
+    body{
+        font-family: Arial, Helvetica, sans-serif; 
+    }
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+        align-content: space-between;
+    } 
+    
+      .nav_item:last-child {
+        margin-right: 0; /* Remove margin from the last navigation item */
+      }
+/*step 19*/
+.card{
+    flex-basis: 325px;
+    border: 2px solid #45ADDD;
+    flex-direction: row;
+}
+
+/*step 18*/
+.pricing{
+    display: flex;
+    flex-direction: row;
+}
+
+/*step 20*/
+.gallery {
+    display: none;
+    visibility: hidden;
+}
+
+    }
+
