@@ -42,13 +42,32 @@ list items or the links - modify the nav_links class to use flex. */
     flex-direction: column;
 }
 
+/*step 5*/
+/*remain the same color have been visited*/
+a:link {
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: blue;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
 /*step6*/
 .card > header {
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     background-color: #288088;
     border: 2px solid #45ADAD;
-    padding: 20px 0;
     flex-direction: column;
 }
 
@@ -57,7 +76,6 @@ list items or the links - modify the nav_links class to use flex. */
     max-width: 450px; 
     flex: 1 1 450px;
     margin: 20px;
-    padding: 20px;
     border-radius: 10px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
@@ -86,7 +104,6 @@ list items or the links - modify the nav_links class to use flex. */
     justify-content: center; /* Center all images */
 }
 
-
 @media screen and (min-width: 900px) {
 /*step 11*/
 header{
@@ -107,7 +124,6 @@ header{
     max-width: 275px; 
     flex: 1 1 275px;
     margin: 20px;
-    padding: 20px;
     border-radius: 10px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
@@ -122,8 +138,12 @@ header{
 }
 
 /*step 13*/
-
-
+.header {
+ position: sticky;
+ top: 0;
+ width: 100%;
+ z-index: 1000; 
+}
 }
 
 /*step 14*/
@@ -136,22 +156,50 @@ header{
 
 /*step 15*/
 @media print and (orientation: portrait) {
+
+    header{
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
     body{
         font-family: Arial, Helvetica, sans-serif; 
     }
-    .nav_links{
+
+    .nav_links {
         display: flex;
         flex-direction: row;
-        align-content: space-between;
-    } 
+        justify-content: space-between; 
+        align-items: stretch;   /*Spread the cards*/
+        align-items: flex-end; /* Align items to the bottom */
+    }
+
+    .nav_item {
+        margin-bottom: 25px;
+        width: 100%;
+        text-align: center;
+    }
     
-      .nav_item:last-child {
-        margin-right: 0; /* Remove margin from the last navigation item */
-      }
 /*step 19*/
 .card{
     flex-basis: 325px;
     border: 2px solid #45ADDD;
+    background-color: #288088;
+    flex-direction: row;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.card > header {
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    background-color: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0;
     flex-direction: row;
 }
 
@@ -159,13 +207,21 @@ header{
 .pricing{
     display: flex;
     flex-direction: row;
+    align-items: flex-end;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-basis: 450px;
 }
+
 
 /*step 20*/
 .gallery {
     display: none;
     visibility: hidden;
 }
-
+#gallery {
+    display: none; /* Hide the gallery header */
+}
     }
+
 
